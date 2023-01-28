@@ -3,7 +3,7 @@
 class Database {
     private $host ='localhost';
     private $db_name="myblog";
-    private $db_name='root';
+    private $username='root';
     private $password = '123456';
     private $conn;
 
@@ -13,7 +13,7 @@ class Database {
 
         try{
             $this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->db_name,$this->username,$this->password);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODR_EXCEPTION)
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODR_EXCEPTION);
         }catch(PDOException $e){
              'Connection Error: '.$e->getMessage();
         }
